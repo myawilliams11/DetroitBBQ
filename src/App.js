@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Order from './order'
-
-
+import Order from './Order'
 
 class App extends Component {
-  state = {
-    fields: {}
-  };
-
-  onChange = updatedValue => {
-    this.setState({ fields: {
-      ...this.state.fields,
-      ...updatedValue 
-    }});
-  };
+state = {
+  renderPage: ''
+}
+onClick = (e) => {
+  this.setState({
+    renderPage: 'Order'
+  })
+}
 
   render() {
-    return (
-      <div className="App">
-     <Order onChange={fields => this.onChange(fields)}/>
-     <p>
-     {JSON.stringify(this.state.fields, null, 2)}
-       </p>
-      </div>
+    return (<div className="App">
+    {this.state.renderPage === 'Order' ? <Order />: null}
+    <button onClick= {this.onClick}>Order Form</button>
+    </div>
     );
   }
 }
