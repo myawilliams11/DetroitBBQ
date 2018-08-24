@@ -64,7 +64,6 @@ export default class Form extends React.Component {
                 onChange={e => this.change(e)} 
                 />
                 <br />
-                <p>{JSON.stringify(this.state)}</p>
                 <button onClick={e => this.onSubmit(e)}>Submit</button>
             </form>
         );
