@@ -34,7 +34,8 @@ export default class Form extends React.Component {
     }
 
     render() {
-        return (
+        return (<div>
+            <h2>Contact Us!</h2>
             <form>
                 <input 
                 name='firstName'
@@ -66,6 +67,7 @@ export default class Form extends React.Component {
                 <br />
                 <button onClick={e => this.onSubmit(e)}>Submit</button>
             </form>
+            </div>
         );
     }
 }
