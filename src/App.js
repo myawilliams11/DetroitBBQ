@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Order from './Order'
 import History from './History'
-import Map from './Map'
+import Map from './map'
 
 class App extends Component {
 state = {
