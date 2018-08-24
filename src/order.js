@@ -1,22 +1,42 @@
 import React from 'react';
-import Form from './Form';
+import FoodDrop from './FoodDrop';
+import NumberDrop from './NumberDrop';
+import TextArea from './TextArea';
 
 
 
 class Order extends React.Component {
-    state = {
-      fields: {}
-    };
-    
-    onChange = updatedValue => {
-      this.setState({ fields: {
-        ...this.state.fields,
-        ...updatedValue 
-      }});
-    };
     render(){
-        return <Form onChange={fields => this.onChange(fields)}/>
-    }
+        return (<div>
+        <div>
+          <FoodDrop />
+          </div>
+          <br />
+          <div>
+          <FoodDrop />
+          </div>
+          <br />
+          <div>
+          <FoodDrop />
+          </div>
+          <br />
+          <div>
+            <NumberDrop />
+          </div>
+          <br />
+          <div>
+            <NumberDrop />
+          </div>
+          <br />
+          <div>
+            <NumberDrop />
+          </div>
+          <br />
+          <TextArea />
+          </div>
+          
+          
+        )}
 }
 
 export default Order;

@@ -17,9 +17,6 @@ onClick = (pageName) => (e) => {
   render() {
     return (
       <div className="App">
-    {this.state.renderPage === 'Order' ? <Order />: null}
-    {this.state.renderPage === 'History' ? <History />: null}
-    {this.state.renderPage === 'Map' ? <Map />: null}
       <button 
       onClick= {this.onClick('Order')}
       disabled={this.state.renderPage === 'Order' ? true: false}>
@@ -37,6 +34,9 @@ onClick = (pageName) => (e) => {
       disabled={this.state.renderPage === 'Map' ? true: false}>
       Map
       </button>
+      {this.state.renderPage === 'Order' ? <Order />: null}
+      {this.state.renderPage === 'History' ? <History />: null}
+      {this.state.renderPage === 'Map' ? <Map />: null}
     </div>
     );
   }
