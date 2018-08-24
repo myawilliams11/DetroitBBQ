@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Order from './Order'
-import History from './History'
+import Order from './order'
+import History from './history'
 import Map from './map'
 
 class App extends Component {
