@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Order from './order'
-import History from './history'
-import Map from './map'
+import Order from './Order'
+import History from './History'
+import Map from './Map'
 
 class App extends Component {
 state = {
