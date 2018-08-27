@@ -13,23 +13,10 @@ class Order extends React.Component {
           </div>
           <br />
           <div>
-          <FoodDrop />
-          </div>
-          <br />
-          <div>
-          <FoodDrop />
-          </div>
-          <br />
-          <div>
             <NumberDrop />
           </div>
           <br />
           <div>
-            <NumberDrop />
-          </div>
-          <br />
-          <div>
-            <NumberDrop />
           </div>
           <br />
           <TextArea />
