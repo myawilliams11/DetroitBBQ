@@ -278,19 +278,24 @@ I bet you’re still using Bootstrap too…
     <Segment style={{ padding: "0em" }} vertical>
       <Grid celled="internally" columns="equal" stackable>
         <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+          {/* {/* <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
             <Header as="h3" style={{ fontSize: "2em" }}>
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              That is what they all say about us
+              Text in map line
             </p>
-            <Map />
-          </Grid.Column>
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "5em" }}>
+            <Map /> */}
+          {/* </Grid.Column> */}
+          <Grid.Column style={{ paddingBottom: "3em", paddingTop: "3em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
+            <Header as="h3" style={{ fontSize: "2em", textAlign:"center"}}> Find us
+            <Map style={{position: "relative"}}></Map>
             </Header>
-            <Form />
-          </Grid.Column>
+          </Grid.Column> 
+          <Grid.Column style={{ paddingBottom: "3em", paddingTop: "3em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
+            <Header as="h3" style={{ fontSize: "2em", textAlign:"center"}}> Find us
+            <Map style={{position: "relative"}}></Map>
+            </Header>
+          </Grid.Column> 
         </Grid.Row>
       </Grid>
     </Segment>
