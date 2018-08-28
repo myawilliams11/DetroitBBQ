@@ -1,4 +1,16 @@
 HomepageHeading {
     color: red;
+}
 
+.headBanner{
+    background-image: url("./rib1.jpg") !important;
+    background-repeat: none !important;
+    /* background-size: auto; */
+    background-position:center !important;
+    background-repeat:no-repeat !important;
+    background-size:cover !important;
+}
+
+.menuBar{
+    background-color:black !important;
 }

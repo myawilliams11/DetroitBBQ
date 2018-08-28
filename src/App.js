@@ -5,6 +5,8 @@ import History from "./history";
 import Form from "./Form";
 import Map from "./map";
 import PropTypes from "prop-types";
+import Ken from "./ken.png";
+import Ribs from "./ribs.png";
 import {
   Button,
   Container,
@@ -18,21 +20,25 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility
+  Visibility, 
+  Modal
 } from "semantic-ui-react";
+
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container text>
+  <Container text >
   <a name = "App" />
+
     <Header
+    
       as="h1"
       content="Big Ken's Detroit Style BBQ"
       inverted
-      style={{
+      style={{ 
         fontSize: mobile ? "2em" : "4em",
         fontWeight: "normal",
         marginBottom: 0,
@@ -49,7 +55,10 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? "0.5em" : "1.5em"
       }}
     />
-    <Button primary size="huge">
+    <Button                   
+      href= "#Form"
+      primary size="huge"
+      style={{backgroundColor:"black", fontColor: "light grey"}}>
       Pre-Order 
       <Icon name="right arrow" />
     </Button>
@@ -60,10 +69,6 @@ HomepageHeading.propTypes = {
   mobile: PropTypes.bool
 };
 
-/* Heads up!
- * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
- * It can be more complicated, but you can create really flexible markup.
- */
 class DesktopContainer extends Component {
   state = {
     activeItem: "home"
@@ -81,7 +86,6 @@ class DesktopContainer extends Component {
   render() {
     const { children } = this.props;
     const { fixed } = this.state;
-    
 
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -92,12 +96,13 @@ class DesktopContainer extends Component {
         >
         <a name = "App" />
           <Segment
+            className='headBanner'
             inverted
             textAlign="center"
             style={{ minHeight: 700, padding: "1em 0em" }}
             vertical
           >
-            <Menu
+            <Menu className='menuBar'
               fixed={fixed ? "top" : null}
               inverted={!fixed}
               pointing={!fixed}
@@ -114,12 +119,12 @@ class DesktopContainer extends Component {
                   Home
                 </Menu.Item>
                 <Menu.Item
-                  name="Form"
-                  href= "#Form"
-                  active={this.state.activeItem === "Form"}
+                  name="history"
+                  href= "#history"
+                  active={this.state.activeItem === "history"}
                   onClick={this.handleItemClick}
                 >
-                  Order
+                  About
                 </Menu.Item>
                 <Menu.Item
                   name="map"
@@ -127,8 +132,17 @@ class DesktopContainer extends Component {
                   active={this.state.activeItem === "map"}
                   onClick={this.handleItemClick}
                 >
-                  Contact Us
+                  Find Us
                 </Menu.Item>
+                <Menu.Item
+                  name="Form"
+                  href= "#Form"
+                  active={this.state.activeItem === "Form"}
+                  onClick={this.handleItemClick}
+                >
+                  Order
+                </Menu.Item>
+
               </Container>
             </Menu>
             <HomepageHeading />
@@ -245,9 +259,11 @@ ResponsiveContainer.propTypes = {
 const HomepageLayout = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: "8em 0em" }} vertical>
+    <a name = "history" />
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
+
             <Header as="h3" style={{ fontSize: "2em" }}>
               About Us
             </Header>
@@ -269,7 +285,7 @@ I bet you’re still using Bootstrap too…
               bordered
               rounded
               size="large"
-              src="ken.png"
+              src={Ken}
             />
           </Grid.Column>
         </Grid.Row>
@@ -283,14 +299,6 @@ I bet you’re still using Bootstrap too…
     <Segment style={{ padding: "0em" }} vertical>
       <Grid celled="internally" columns="equal" stackable>
         <Grid.Row textAlign="center">
-          {/* {/* <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Text in map line
-            </p>
-            <Map /> */}
-          {/* </Grid.Column> */}
           <Grid.Column style={{ paddingBottom: "3em", paddingTop: "3em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
             <Header as="h3" style={{ fontSize: "2em", textAlign:"center"}}> Find us
             <Map style={{position: "relative"}}></Map>
@@ -312,26 +320,18 @@ I bet you’re still using Bootstrap too…
           Order
         </Header>
         <Order />
-        <Button as="a" size="large">
-          Read More
-        </Button>
+        <Modal trigger={<Button as="a" size="large"> TheButton</Button>}basic size="small">
+        <Modal.Content>
+      <p style={{fontSize:"3em", textAlign:"center",pointerEvents: 'none'}}>
+        Your order has been sent! 
+        <br/> 
+        Someone will contact you shortly! 
+        <br/>
+        <Button>Not Working Yet</Button>
+      </p>
+    </Modal.Content>
+    </Modal>
 
-        <Divider
-          as="h4"
-          className="header"
-          horizontal
-          style={{ margin: "3em 0em", textTransform: "uppercase" }}
-        >
-          <a href="#">Case Studies</a>
-        </Divider>
-       
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Contact Us{" "}
-        </Header>
-        
-        <Button as="a" size="large">
-          I'm Still Quite Interested
-        </Button>
       </Container>
     </Segment>
 
@@ -339,31 +339,16 @@ I bet you’re still using Bootstrap too…
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="About" />
-              <List link inverted>
-                <List.Item as="a">Sitemap</List.Item>
-                <List.Item as="a">Contact Us</List.Item>
-                <List.Item as="a">Religious Ceremonies</List.Item>
-                <List.Item as="a">Gazebo Plans</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="Services" />
-              <List link inverted>
-                <List.Item as="a">Banana Pre-Order</List.Item>
-                <List.Item as="a">DNA FAQ</List.Item>
-                <List.Item as="a">How To Access</List.Item>
-                <List.Item as="a">Favorite X-Men</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as="h4" inverted>
-                Footer Header
+            <Grid.Column width={15}>
+              <Header as="h4" inverted style={{textAlign:"center"}}>
+                
+                (313)505-0505  |  test@gmail.com  |  Facebook 
               </Header>
-              <p>
-                Extra space for a call to action inside the footer that could
-                help re-engage users.
+              <p style={{textAlign:"center"}}>
+                Copyright © 2018 All Rights Reserved.
+              </p>
+              <p style={{textAlign:"center"}}>                
+                SNM LLC 
               </p>
             </Grid.Column>
           </Grid.Row>
@@ -374,41 +359,3 @@ I bet you’re still using Bootstrap too…
 );
 
 export default HomepageLayout;
-// class App extends Component {
-// state = {
-//   renderPage: ''
-// }
-// onClick = (pageName) => (e) => {
-//   this.setState({
-//     renderPage: pageName
-//   })
-// }
-
-//   render() {
-//     return (
-
-//       <div className="App">
-// <button
-// onClick= {this.onClick('Order')}
-// disabled={this.state.renderPage === 'Order' ? true: false}>
-// Order Form
-// </button>
-//       <button
-//       onClick= {this.onClick('Home')}>
-//       Home
-//       </button>
-//       <button onClick= {this.onClick('History')}
-//       disabled={this.state.renderPage === 'History' ? true: false}>
-//       History
-//       </button>
-//       <button onClick= {this.onClick('Map')}
-//       disabled={this.state.renderPage === 'Map' ? true: false}>
-//       Map
-//       </button>
-//       {this.state.renderPage === 'Order' ? <Order />: null}
-//       {this.state.renderPage === 'History' ? <History />: null}
-//       {this.state.renderPage === 'Map' ? <Map />: null}
-//     </div>
-//     );
-//   }
-// }
