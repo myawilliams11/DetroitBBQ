@@ -36,20 +36,20 @@ export default class Form extends React.Component {
 
     render() {
         return (
-            <Menu fixed='top' inverted>
-            <Container>
-              <Menu.Item as='a' header>
-                <Image size='mini' src='detroitbbq/src/bigkenlogo.png' style={{ marginRight: '1.5em' }} />
-                Big Ken's BBQ
-              </Menu.Item>
-              <Menu.Item as='a'>About</Menu.Item>
-              <Menu.Item as='a'>Order</Menu.Item>
-              <Menu.Item as='a'>Contact Us</Menu.Item>
+        //     <Menu fixed='top' inverted>
+        //     <Container>
+        //       <Menu.Item as='a' header>
+        //         <Image size='mini' src='detroitbbq/src/bigkenlogo.png' style={{ marginRight: '1.5em' }} />
+        //         Big Ken's BBQ
+        //       </Menu.Item>
+        //       <Menu.Item as='a'>About</Menu.Item>
+        //       <Menu.Item as='a'>Order</Menu.Item>
+        //       <Menu.Item as='a'>Contact Us</Menu.Item>
         
         
         
-            </Container>
-          </Menu>
+        //     </Container>
+        //   </Menu>
 
         <div>
             <h2>Contact Us!</h2>

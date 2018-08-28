@@ -37,11 +37,11 @@ import {
 
   
 //       <div className="App">
-      // <button 
-      // onClick= {this.onClick('Order')}
-      // disabled={this.state.renderPage === 'Order' ? true: false}>
-      // Order Form
-      // </button>
+//       <button 
+//       onClick= {this.onClick('Order')}
+//       disabled={this.state.renderPage === 'Order' ? true: false}>
+//       Order Form
+//       </button>
 //       <button 
 //       onClick= {this.onClick('Home')}>
 //       Home
@@ -139,9 +139,9 @@ class DesktopContainer extends Component {
                 <Menu.Item as='a' active>
                   Home
                 </Menu.Item>
-                <Menu.Item as='a' >Work</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
-                <Menu.Item as='a'>Careers</Menu.Item>
+                <Menu.Item as='a' >Menu</Menu.Item>
+                <Menu.Item as='a'>Map</Menu.Item>
+                <Menu.Item as='a'>About Us</Menu.Item>
               </Container>
             </Menu>
             <HomepageHeading />
