@@ -27,6 +27,7 @@ import {
  */
 const HomepageHeading = ({ mobile }) => (
   <Container text>
+  <a name = "App" />
     <Header
       as="h1"
       content="Big Ken's Detroit Style BBQ"
@@ -80,6 +81,7 @@ class DesktopContainer extends Component {
   render() {
     const { children } = this.props;
     const { fixed } = this.state;
+    
 
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -88,6 +90,7 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
+        <a name = "App" />
           <Segment
             inverted
             textAlign="center"
@@ -166,6 +169,7 @@ class MobileContainer extends Component {
     const { sidebarOpened } = this.state;
 
     return (
+      
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
         <Sidebar.Pushable>
           <Sidebar
@@ -175,6 +179,7 @@ class MobileContainer extends Component {
             vertical
             visible={sidebarOpened}
           >
+          
             <Menu.Item as="a" active>
               Home
             </Menu.Item>
