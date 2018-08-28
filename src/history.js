@@ -13,6 +13,7 @@ import {
 
 const History = () => (
   <div>
+
   <Menu fixed='top' inverted>
     <Container>
       <Menu.Item as='a' header>
