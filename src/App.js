@@ -237,8 +237,8 @@ I bet you’re still using Bootstrap too…
         <Header as="h3" style={{ fontSize: "2em" }}>
           Order
         </Header>
-        <Form />
-        <Order />
+          <Form />  
+        
         <Modal open = {this.state.modalOpen} onClose={this.handleClose} trigger={<Button onClick = {this.handleOpen} size="large"> TheButton</Button>} basic size = "small">
         <Modal.Content>
       <p style={{fontSize:"3em", textAlign:"center"}}>
