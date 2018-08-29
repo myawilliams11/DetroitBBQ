@@ -37,7 +37,7 @@ class MapContainer extends React.Component {
     return (
       <Map
         google={this.props.google}
-        style={{ width: 400, height: 400 }}
+        style={{ width: 400, height: 400}}
         initialCenter={DetroitCoords}
         zoom={10}
         onClick={this.onMapClicked}
@@ -53,6 +53,7 @@ class MapContainer extends React.Component {
           title={"Location 2"}
           name={"Friday - Sunday 11:00am - 9:00pm"}
           position={NearbyDetroitCoords}
+
         />
         <InfoWindow
           marker={this.state.activeMarker}

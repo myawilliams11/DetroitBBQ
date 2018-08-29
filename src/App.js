@@ -25,10 +25,6 @@ import {
 } from "semantic-ui-react";
 
 
-/* eslint-disable react/no-multi-comp */
-/* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
- * such things.
- */
 const HomepageHeading = ({ mobile }) => (
   <Container text >
   <a name = "App" />
@@ -159,96 +155,10 @@ DesktopContainer.propTypes = {
   children: PropTypes.node
 };
 
-class MobileContainer extends Component {
-  state = {
-    renderPage: "", 
-  };
-  onClick = pageName => e => {
-    this.setState({
-      renderPage: pageName
-    });
-  };
-
-  handlePusherClick = () => {
-    const { sidebarOpened } = this.state;
-
-    if (sidebarOpened) this.setState({ sidebarOpened: false });
-  };
-
-  handleToggle = () =>
-    this.setState({ sidebarOpened: !this.state.sidebarOpened });
-
-  render() {
-    const { children } = this.props;
-    const { sidebarOpened } = this.state;
-
-    return (
-      
-      <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
-        <Sidebar.Pushable>
-          <Sidebar
-            as={Menu}
-            animation="uncover"
-            inverted
-            vertical
-            visible={sidebarOpened}
-          >
-          
-            <Menu.Item as="a" active>
-              Home
-            </Menu.Item>
-            <Menu.Item as="a">Work</Menu.Item>
-            <Menu.Item as="a">Company</Menu.Item>
-            <Menu.Item as="a">Careers</Menu.Item>
-            <Menu.Item as="a">Log in</Menu.Item>
-            <Menu.Item as="a">Sign Up</Menu.Item>
-          </Sidebar>
-
-          <Sidebar.Pusher
-            dimmed={sidebarOpened}
-            onClick={this.handlePusherClick}
-            style={{ minHeight: "100vh" }}
-          >
-            <Segment
-              inverted
-              textAlign="center"
-              style={{ minHeight: 350, padding: "1em 0em" }}
-              vertical
-            >
-              <Container>
-                <Menu inverted pointing secondary size="large">
-                  <Menu.Item onClick={this.handleToggle}>
-                    <Icon name="sidebar" />
-                  </Menu.Item>
-                  <Menu.Item position="right">
-                    <Button as="a" inverted>
-                      Log in
-                    </Button>
-                    <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
-                      Sign Up
-                    </Button>
-                  </Menu.Item>
-                </Menu>
-              </Container>
-              <HomepageHeading mobile />
-            </Segment>
-
-            {children}
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </Responsive>
-    );
-  }
-}
-
-MobileContainer.propTypes = {
-  children: PropTypes.node
-};
-
 const ResponsiveContainer = ({ children }) => (
   <div>
     <DesktopContainer>{children}</DesktopContainer>
-    <MobileContainer>{children}</MobileContainer>
+    {/* <MobileContainer>{children}</MobileContainer> */}
   </div>
 );
 
@@ -305,17 +215,18 @@ I bet you’re still using Bootstrap too…
     </Segment>
     <a name = "map" />
     <Segment style={{ padding: "0em" }} vertical>
-      <Grid celled="internally" columns="equal" stackable>
+      <Grid celled="internally" columns="equal"  verticalAlign="middle" >
         <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "3em", paddingTop: "3em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
-            <Header as="h3" style={{ fontSize: "2em", textAlign:"center"}}> Find us
-            <Map style={{position: "relative"}}></Map>
-            </Header>
+          <Grid.Column style={{ paddingBottom: "3em", paddingTop: "3em", height: "600px", display:"flex", justifyContent: "center", contentAliign:"center"}}>
+          <div className="pageMap">
+            <Header as="h3" style={{ fontSize: "2em" }}> Find us</Header>
+            <Map className="theActualMap"></Map>
+            </div>
           </Grid.Column> 
           <Grid.Column style={{ paddingBottom: "3em", paddingTop: "3em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
-            <Header as="h3" style={{ fontSize: "2em", textAlign:"center"}}> Find us
-            <Map style={{position: "relative"}}></Map>
+            <Header as="h3" style={{ fontSize: "2em", textAlign:"center"}}> 
             </Header>
+             <p style={{position: "relative"}}>15260 8 Mile Road <br/>Detroit Michigan, 48205</p>
           </Grid.Column> 
         </Grid.Row>
       </Grid>
@@ -330,16 +241,16 @@ I bet you’re still using Bootstrap too…
         <Order />
         <Modal open = {this.state.modalOpen} onClose={this.handleClose} trigger={<Button onClick = {this.handleOpen} size="large"> TheButton</Button>} basic size = "small">
         <Modal.Content>
-      <p style={{fontSize:"3em", textAlign:"center",pointerEvents: 'none'}}>
+      <p style={{fontSize:"3em", textAlign:"center"}}>
         Your order has been sent! 
         <br/> 
         Someone will contact you shortly! 
         <br/>
-        <Modal.Actions >
-        <Button onClick={this.handleClose} inverted >Button don't work</Button>
-        </Modal.Actions>
       </p>
     </Modal.Content>
+    <Modal.Actions style={{fontSize:"1em", display: "flex", justifyContent:"center"}}>
+        <Button className="orderButton" onClick={this.handleClose} inverted >Button don't work</Button>
+        </Modal.Actions>
     </Modal>
 
       </Container>
