@@ -7,6 +7,7 @@ import Map from "./map";
 import PropTypes from "prop-types";
 import Ken from "./ken.png";
 import Ribs from "./ribs.png";
+import Facebook from "./facebook-logo.jpg"
 import {
   Button,
   Container,
@@ -141,6 +142,18 @@ class DesktopContainer extends Component {
                   Order
                 </Menu.Item>
 
+                    <Menu.Item position ="right"
+                      name = "Facebook"
+                      href= "#Facebook"
+                      active={this.state.activeItem === "Facebook"}
+                      onClick={this.handleItemClick}
+                    >
+                    <div>
+                      <img src = {Facebook} className = "facebookIcon"></img>
+                    </div>
+                    </Menu.Item>
+                    
+                
               </Container>
             </Menu>
             <HomepageHeading />

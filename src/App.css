@@ -14,6 +14,14 @@ HomepageHeading {
 .menuBar{
     background-color:black !important;
 }
+
+.facebookIcon{
+    display: flex; 
+    flex-direction: row-reverse;
+    height: 30px;
+    width: 30px;   
+    
+}
 /* 
 .pageMap{
     position:relative !important;
