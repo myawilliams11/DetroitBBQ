@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import Order from "./order";
 import History from "./history";
 import Form from "./Form";
 import Map from "./map";
