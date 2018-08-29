@@ -35,6 +35,8 @@ const HomepageHeading = ({ mobile }) => (
       content="Big Ken's Detroit Style BBQ"
       inverted
       style={{ 
+        borderRadius: "30px",
+        backgroundColor: "black",
         fontSize: mobile ? "2em" : "4em",
         fontWeight: "normal",
         marginBottom: 0,
