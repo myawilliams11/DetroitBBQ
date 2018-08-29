@@ -217,16 +217,13 @@ I bet you’re still using Bootstrap too…
     <Segment style={{ padding: "0em" }} vertical>
       <Grid celled="internally" columns="equal"  verticalAlign="middle" >
         <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "3em", paddingTop: "3em", height: "600px", display:"flex", justifyContent: "center", contentAliign:"center"}}>
-          <div className="pageMap">
-            <Header as="h3" style={{ fontSize: "2em" }}> Find us</Header>
-            <Map className="theActualMap"></Map>
-            </div>
-          </Grid.Column> 
           <Grid.Column style={{ paddingBottom: "3em", paddingTop: "3em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
             <Header as="h3" style={{ fontSize: "2em", textAlign:"center"}}> 
             </Header>
              <p style={{position: "relative"}}>15260 8 Mile Road <br/>Detroit Michigan, 48205</p>
+          </Grid.Column> 
+          <Grid.Column style={{ padding:0, height: "100%"}}>
+            <Map className="theActualMap"></Map>
           </Grid.Column> 
         </Grid.Row>
       </Grid>

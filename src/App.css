@@ -14,7 +14,7 @@ HomepageHeading {
 .menuBar{
     background-color:black !important;
 }
-
+/* 
 .pageMap{
     position:relative !important;
     display:flex !important; 
@@ -27,8 +27,4 @@ HomepageHeading {
     justify-Content: center !important; 
     align-content:center !important;
 
- }
-/* .orderButton{
-    font-size:"1em";
-
-} */
+ } */
