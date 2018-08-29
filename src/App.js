@@ -161,7 +161,7 @@ DesktopContainer.propTypes = {
 
 class MobileContainer extends Component {
   state = {
-    renderPage: ""
+    renderPage: "", 
   };
   onClick = pageName => e => {
     this.setState({
@@ -256,7 +256,15 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node
 };
 
-const HomepageLayout = () => (
+class HomepageLayout extends Component{
+
+  // adding modal to order form
+  state = {modalOpen: false}
+  handleOpen = () => this.setState({modalOpen:true})
+  handleClose = () => this.setState({modalOpen:false})
+
+render() {
+  return(
   <ResponsiveContainer>
     <Segment style={{ padding: "8em 0em" }} vertical>
     <a name = "history" />
@@ -320,14 +328,16 @@ I bet you’re still using Bootstrap too…
           Order
         </Header>
         <Order />
-        <Modal trigger={<Button as="a" size="large"> TheButton</Button>}basic size="small">
+        <Modal open = {this.state.modalOpen} onClose={this.handleClose} trigger={<Button onClick = {this.handleOpen} size="large"> TheButton</Button>} basic size = "small">
         <Modal.Content>
       <p style={{fontSize:"3em", textAlign:"center",pointerEvents: 'none'}}>
         Your order has been sent! 
         <br/> 
         Someone will contact you shortly! 
         <br/>
-        <Button>Not Working Yet</Button>
+        <Modal.Actions >
+        <Button onClick={this.handleClose} inverted >Button don't work</Button>
+        </Modal.Actions>
       </p>
     </Modal.Content>
     </Modal>
@@ -356,6 +366,6 @@ I bet you’re still using Bootstrap too…
       </Container>
     </Segment>
   </ResponsiveContainer>
-);
+  )}};
 
 export default HomepageLayout;
