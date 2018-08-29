@@ -37,7 +37,6 @@ class MapContainer extends React.Component {
     return (
       <Map
         google={this.props.google}
-        style={{ width: 400, height: 400}}
         initialCenter={DetroitCoords}
         zoom={10}
         onClick={this.onMapClicked}
