@@ -14,3 +14,21 @@ HomepageHeading {
 .menuBar{
     background-color:black !important;
 }
+
+.pageMap{
+    position:relative !important;
+    display:flex !important; 
+    justify-Content: center !important; 
+    align-content:center !important;
+}
+ theActualMap{    
+    position:relative !important;
+    display:flex !important; 
+    justify-Content: center !important; 
+    align-content:center !important;
+
+ }
+/* .orderButton{
+    font-size:"1em";
+
+} */
