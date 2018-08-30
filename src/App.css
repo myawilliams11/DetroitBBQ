@@ -15,7 +15,12 @@ HomepageHeading {
     background-color:black !important;
 }
 
-.facebookIcon{
+#facebookIcon{
+    position: relative; 
+    left: 250px; 
+}
+
+.facebookIcon{ 
     display: flex; 
     height: 30px;
     width: 30px;   
