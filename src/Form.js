@@ -8,40 +8,14 @@ export default class Form extends React.Component {
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
-    fields: {}
+    phone: ""
   };
   change = e => {
-    this.onChange({ [e.target.name]: e.target.value });
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
-  onChange = updatedValue => {
-    this.setState({
-      fields: {
-        ...this.state.fields,
-        ...updatedValue
-      }
-    });
-  };
-  onSubmit = e => {
-    e.preventDefault();
-    // this.props.onSubmit(this.state);
-    this.setState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: ""
-    });
-    this.onChange({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: ""
-    });
-  };
   render() {
     return (
       <form>
@@ -49,28 +23,28 @@ export default class Form extends React.Component {
           name="firstName"
           placeholder="First Name"
           value={this.state.firstName}
-          onChange={e => this.change(e)}
+          onChange={this.change}
         />
         <br />
         <input
           name="lastName"
           placeholder="Last Name"
           value={this.state.lastName}
-          onChange={e => this.change(e)}
+          onChange={this.change}
         />
         <br />
         <input
           name="email"
           placeholder="E-mail"
           value={this.state.email}
-          onChange={e => this.change(e)}
+          onChange={this.change}
         />
         <br />
         <input
           name="phone"
           placeholder="Phone"
           value={this.state.phone}
-          onChange={e => this.change(e)}
+          onChange={this.change}
         />
         <br />
         <div>
