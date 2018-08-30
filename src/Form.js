@@ -8,7 +8,8 @@ export default class Form extends React.Component {
     firstName: "",
     lastName: "",
     email: "",
-    phone: ""
+    phone: "",
+    textarea: ""
   };
   change = e => {
     this.setState({
@@ -73,7 +74,13 @@ export default class Form extends React.Component {
         <br />
         <div />
         <br />
-        <TextArea />
+        <TextArea
+          name="textarea"
+          placeholder="Add details..."
+          onChange={this.change}
+          value={this.state.textarea}>
+            {this.state.textarea}
+        </TextArea>
       </form>
     );
   }
