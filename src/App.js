@@ -144,6 +144,7 @@ class DesktopContainer extends Component {
                 </Menu.Item>
 
                     <Menu.Item position ="right"
+                      id = "facebookIcon"
                       name = "Facebook"
                       href= "#Facebook"
                       active={this.state.activeItem === "Facebook"}
