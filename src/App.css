@@ -14,6 +14,18 @@ HomepageHeading {
 .menuBar{
     background-color:black !important;
 }
+
+.facebookIcon{
+    display: flex; 
+    height: 30px;
+    width: 30px;   
+}
+
+.yelpIcon{
+    display: flex;  
+    height: 30px; 
+    width: 30px; 
+}
 /* 
 .pageMap{
     position:relative !important;
