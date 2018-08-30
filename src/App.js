@@ -150,7 +150,9 @@ class DesktopContainer extends Component {
                       onClick={this.handleItemClick}
                     >
                     <div>
-                      <img src = {Facebook} className = "facebookIcon"></img>
+                      <a href="https://www.facebook.com/bigkensbarbeque/" target="_blank">
+                        <img src = {Facebook} className = "facebookIcon"></img>
+                      </a>
                     </div>
                     </Menu.Item>
                     <Menu.Item position ="right"
@@ -160,7 +162,9 @@ class DesktopContainer extends Component {
                       onClick={this.handleItemClick}
                       >
                     <div>
-                      <img src = {Yelp} className = "yelpIcon"></img>
+                      <a href="https://www.yelp.com/" target="_blank">
+                        <img src = {Yelp} className = "yelpIcon"></img>
+                      </a>
                     </div>
                     </Menu.Item>
 
