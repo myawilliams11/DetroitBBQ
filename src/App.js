@@ -5,9 +5,8 @@ import History from "./history";
 import Form from "./Form";
 import Map from "./map";
 import PropTypes from "prop-types";
-import Ken from "./ken.jpg";
+import Ken from "./ken.png";
 import Ribs from "./ribs.png";
-import Fb from "./facebook-logo.png";
 import {
   Button,
   Container,
@@ -29,8 +28,8 @@ import {
 const HomepageHeading = ({ mobile }) => (
   <Container text >
   <a name = "App" />
-    <div style={{borderwidth: "200px", borderHeight: "100px",
-        backgroundColor: "black", opacity: "0.75"}}>
+    <div style={{borderRadius: "30px",
+        backgroundColor: "black", opacity: "0.5"}}>
          <div className="headerStyle">
           <Header
               as="h1"
@@ -62,7 +61,7 @@ const HomepageHeading = ({ mobile }) => (
     <Button                   
       href= "#Form"
       primary size="huge"
-      style={{backgroundColor:"black", fontColor: "light grey", opacity:"0.8"}}>
+      style={{backgroundColor:"black", fontColor: "light grey"}}>
       Pre-Order now! 
       <Icon name="right arrow" />
     </Button>
@@ -103,11 +102,10 @@ class DesktopContainer extends Component {
             className='headBanner'
             inverted
             textAlign="center"
-            style={{ minHeight: 700, padding: "1em 0em"}}
+            style={{ minHeight: 700, padding: "1em 0em" }}
             vertical
           >
             <Menu className='menuBar'
-              style={{ opacity:"0.75" }}
               fixed={fixed ? "top" : null}
               inverted={!fixed}
               pointing={!fixed}
@@ -191,19 +189,21 @@ render() {
         <Grid.Row>
           <Grid.Column width={8}>
 
-            <Header as="h3" style={{ fontSize: "  1.5em", textAlign:"center"}}>
+            <Header as="h3" style={{ fontSize: "2em" }}>
               About Us
             </Header>
-            <p style={{ fontSize: "1em" }}>
-            LLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque consequat orci id tincidunt. Nam consectetur rutrum tincidunt. Nunc in semper leo, sit amet maximus tellus. Sed ornare porttitor mauris ac dictum. Vestibulum quis dui quam. Cras feugiat et lectus in convallis. Morbi maximus elementum sodales. Cras et vulputate metus. Aenean efficitur magna elementum, tristique dui non, cursus enim. Ut scelerisque commodo nisl, sed molestie arcu mollis a. Pellentesque eu ultrices ligula. Nullam aliquet dolor accumsan purus ultricies rutrum.
-            <p/>
-            Suspendisse potenti. Donec non eros non lacus faucibus vehicula sed vitae eros. Nam lobortis faucibus est in pharetra. Nunc eu ultricies lectus. Curabitur ligula magna, gravida vitae velit sed, fringilla egestas risus. Cras consectetur hendrerit magna tempus venenatis. Maecenas dignissim, nisi id tempor aliquam, tortor nulla cursus nisi, sed auctor enim diam dignissim nulla. Vestibulum egestas magna dui, et tempus dui vestibulum sed. Pellentesque nec neque vitae sem convallis varius non sed nisl.
-            <p/>
-            <p/>f
-            Donec pharetra malesuada tortor, non vestibulum orci tristique sed. Etiam auctor tincidunt libero, et sodales nisl dapibus sit amet. Nam eu lacus in metus tempus sollicitudin. Etiam in nisi a eros ultrices rhoncus et ac nulla. Vestibulum et ipsum sit amet enim pharetra bibendum at non turpis. Morbi pulvinar iaculis leo, sed ullamcorper erat posuere non. Integer et faucibus augue. Nam facilisis metus vel sagittis dapibus. Maecenas elit tellus, fermentum sit amet aliquet eget, pretium non odio. Sed enim velit, lobortis at purus in, porta bibendum ipsum. Aenean et magna tellus.
+            <p style={{ fontSize: "1.33em" }}>
+            Lorem ipsum dolor amet ennui butcher cold-pressed poke, shoreditch lomo gastropub. Lomo small batch locavore taiyaki etsy 90's letterpress hella. Drinking vinegar butcher XOXO pop-up live-edge irony vexillologist. Butcher fam schlitz lumbersexual, green juice street art air plant poke unicorn pork belly intelligentsia cliche iPhone. Tbh fingerstache direct trade health goth blog retro forage tacos taiyaki cliche next level disrupt roof party. Kinfolk trust fund messenger bag, paleo organic blue bottle adaptogen kale chips chia brunch ennui microdosing typewriter. 90's fam semiotics waistcoat cronut hoodie fanny pack organic selfies farm-to-table.
+
+Oh. You need a little dummy text for your mockup? How quaint.
+
+I bet you’re still using Bootstrap too…
             </p>
 
-
+            <p style={{ fontSize: "1.33em" }}>
+              Yes that's right, you thought it was the stuff of dreams, but even
+              bananas can be bioengineered.
+            </p>
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
             <Image
@@ -312,7 +312,7 @@ render() {
             <Grid.Column width={15}>
               <Header as="h4" inverted style={{textAlign:"center"}}>
                 
-                (313)505-0505  |  test@gmail.com  | < a ref = "https://www.facebook.com/bigkensbarbeque/?fb_dtsg_ag=AdzZHcpW9mwKaFxfs2o6gr7JR-daGi0FAVp53VEYR4LRBg%3AAdzosTvdloaqhdgfiVYLEhcB0bms2_p7ufadv5Qz_siC4Q" target="_blank"> <img src={Fb} style={{height:"20px", width:"20px", opacity:"80"}}/></a>
+                (313)505-0505  |  test@gmail.com  |  Facebook 
               </Header>
               <p style={{textAlign:"center"}}>
                 SNM LLC <br/>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import { GoogleApiWrapper, Map, Marker, InfoWindow } from "google-maps-react";
 
@@ -71,5 +70,3 @@ class MapContainer extends React.Component {
 export default GoogleApiWrapper({
   apiKey: "AIzaSyBO4We7vjQJVCfBtlMbqYbDNkQfLX8rIAk"
 })(MapContainer);
-=======
->>>>>>> origin
