@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import App from './App.css'
 import {
@@ -17,12 +16,13 @@ const History = () => (
 
   <Menu fixed='top' inverted>
     <Container>
-      <Menu.Item>
+      <Menu.Item as='a' header>
+        <Image size='mini' src='detroitbbq/src/bigkenlogo.png' style={{ marginRight: '1.5em' }} />
         Big Ken's BBQ
       </Menu.Item>
-      <Menu.Item>About</Menu.Item>
-      <Menu.Item>Order</Menu.Item>
-      <Menu.Item>Contact Us</Menu.Item>
+      <Menu.Item as='a'>About</Menu.Item>
+      <Menu.Item as='a'>Order</Menu.Item>
+      <Menu.Item as='a'>Contact Us</Menu.Item>
 
 
 
@@ -71,5 +71,3 @@ I bet you’re still using Bootstrap too…
 )
 
 export default History;
-=======
->>>>>>> origin
