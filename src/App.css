@@ -1,28 +1,30 @@
-.App {
-  text-align: center;
+HomepageHeading {
+    color: red;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.headBanner{
+    background-image: url("./rib1.jpg") !important;
+    background-repeat: none !important;
+    /* background-size: auto; */
+    background-position:center !important;
+    background-repeat:no-repeat !important;
+    background-size:cover !important;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.menuBar{
+    background-color:black !important;
 }
+/* 
+.pageMap{
+    position:relative !important;
+    display:flex !important; 
+    justify-Content: center !important; 
+    align-content:center !important;
+}
+ theActualMap{    
+    position:relative !important;
+    display:flex !important; 
+    justify-Content: center !important; 
+    align-content:center !important;
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+ } */

@@ -9,8 +9,9 @@ const options = [
 
 const DropdownExampleSimple = () => (
   <Menu compact>
-    <Dropdown text='Menu' options={options} simple item />
+    <Dropdown text='Items' options={options} simple item />
   </Menu>
+  
 )
 
 export default DropdownExampleSimple

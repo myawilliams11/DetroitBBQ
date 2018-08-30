@@ -8,7 +8,7 @@ const DetroitCoords = {
 const NearbyDetroitCoords = {
   lat: 42.4,
   lng: -83.0458
-}
+};
 
 class MapContainer extends React.Component {
   state = {
@@ -37,22 +37,22 @@ class MapContainer extends React.Component {
     return (
       <Map
         google={this.props.google}
-        style={{ width: 400, height: 400 }}
         initialCenter={DetroitCoords}
         zoom={10}
         onClick={this.onMapClicked}
       >
         <Marker
           onClick={this.onMarkerClick}
-          title={"The marker`s title will appear as a tooltip."}
-          name={"Current location"}
+          title={"Location 1"}
+          name={"Monday - Thursday 11:00am - 9:00pm"}
           position={DetroitCoords}
         />
         <Marker
           onClick={this.onMarkerClick}
-          title={"The marker`s title will appear as a tooltip."}
-          name={"Another Location"}
+          title={"Location 2"}
+          name={"Friday - Sunday 11:00am - 9:00pm"}
           position={NearbyDetroitCoords}
+
         />
         <InfoWindow
           marker={this.state.activeMarker}
@@ -68,5 +68,5 @@ class MapContainer extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: YOUR_API_KEY_HERE
+  apiKey: "AIzaSyBO4We7vjQJVCfBtlMbqYbDNkQfLX8rIAk"
 })(MapContainer);
