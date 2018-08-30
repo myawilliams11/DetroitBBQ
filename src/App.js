@@ -28,41 +28,36 @@ import {
 const HomepageHeading = ({ mobile }) => (
   <Container text >
   <a name = "App" />
-    <div style={{borderRadius: "30px",
-        backgroundColor: "black", opacity: "0.5"}}>
-         <div className="headerStyle">
-          <Header
-              as="h1"
-              content="Big Ken's BBQ"
-              inverted
-              style={{ 
-                fontSize: mobile ? "2em" : "4em",
-                opacity:"1",
-                fontWeight: "normal",
-                marginBottom: 0,
-                marginTop: mobile ? "1.5em" : "3em"
-              }}
-          />
-          </div>
 
-          <Header
-            as="h2"
-            content="Food Stand and Catering Service"
-            inverted
-            style={{
-              fontSize: mobile ? "1.5em" : "1.7em",
-              fontWeight: "normal",
-              marginTop: mobile ? "0.5em" : "1.5em",
-              paddingBottom:"0.5em"
-            }}
-          />
-    </div>
-    <br/>
+    <Header
+    
+      as="h1"
+      content="Big Ken's Detroit Style BBQ"
+      inverted
+      style={{ 
+        borderRadius: "30px",
+        backgroundColor: "black",
+        fontSize: mobile ? "2em" : "4em",
+        fontWeight: "normal",
+        marginBottom: 0,
+        marginTop: mobile ? "1.5em" : "3em"
+      }}
+    />
+    <Header
+      as="h2"
+      content="Supplemental Text"
+      inverted
+      style={{
+        fontSize: mobile ? "1.5em" : "1.7em",
+        fontWeight: "normal",
+        marginTop: mobile ? "0.5em" : "1.5em"
+      }}
+    />
     <Button                   
       href= "#Form"
       primary size="huge"
       style={{backgroundColor:"black", fontColor: "light grey"}}>
-      Pre-Order now! 
+      Pre-Order 
       <Icon name="right arrow" />
     </Button>
   </Container>
@@ -224,54 +219,10 @@ I bet you’re still using Bootstrap too…
     <Segment style={{ padding: "0em" }} vertical>
       <Grid celled="internally" columns="equal"  verticalAlign="middle" >
         <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
-            <Header as="h3" style={{ fontSize: "1.5em", textAlign:"center"}}> 
-              Hours of Operation 
+          <Grid.Column style={{ paddingBottom: "3em", paddingTop: "3em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
+            <Header as="h3" style={{ fontSize: "2em", textAlign:"center"}}> 
             </Header>
-             <Header style={{position: "relative", fontSize:"1.3em"}}>
-             15260 Eight Mile Road <br/>
-             Detroit Michigan, 48205
-             </Header>
-             <Container style={{height:"200px", width:"180px", textAlign:"left"}}>
-             <p>
-               <strong>Sunday:</strong> 11:00am - 9:00pm
-               <br/>
-               <strong>Monday:</strong>    Closed
-               <br/>
-               <strong>Tuesday:</strong> Catering Only
-               <br/>
-               <strong>Wednesday:</strong> Catering Only
-               <br/>
-               <strong>Thursday:</strong> 4:00pm - 9:00pm
-               <br/>
-               <strong>Friday:</strong> 11:00am - 9:00pm
-               <br/>
-               <strong>Saturday:</strong> 11:00am - 9:00pm
-               <br/>
-             </p>
-             </Container>
-             <Header style={{position: "relative", fontSize:"1.3em"}}>
-             23230 Wrexford Drive <br/>
-             Southfield Michigan, 48033
-             </Header>
-             <Container style={{height:"200px", width:"180px", textAlign:"left"}}>
-             <p>
-               <strong>Sunday:</strong> 11:00am - 9:00pm
-               <br/>
-               <strong>Monday:</strong>    Closed
-               <br/>
-               <strong>Tuesday:</strong> Catering Only
-               <br/>
-               <strong>Wednesday:</strong> Catering Only
-               <br/>
-               <strong>Thursday:</strong> Catering Only
-               <br/>
-               <strong>Friday:</strong> 11:00am - 9:00pm
-               <br/>
-               <strong>Saturday:</strong> 11:00am - 9:00pm
-               <br/>
-             </p>
-             </Container>
+             <p style={{position: "relative"}}>15260 8 Mile Road <br/>Detroit Michigan, 48205</p>
           </Grid.Column> 
           <Grid.Column style={{ padding:0, height: "100%"}}>
             <Map className="theActualMap"></Map>
@@ -284,7 +235,7 @@ I bet you’re still using Bootstrap too…
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Container text>
         <Header as="h3" style={{ fontSize: "2em" }}>
-          Pre-Order
+          Order
         </Header>
           <Form />  
         
@@ -315,12 +266,11 @@ I bet you’re still using Bootstrap too…
                 (313)505-0505  |  test@gmail.com  |  Facebook 
               </Header>
               <p style={{textAlign:"center"}}>
-                SNM LLC <br/>
                 Copyright © 2018 All Rights Reserved.
-              </p>  
-              <p style={{textAlign:"center"}}>
-                WillPower Solutions LLC 
-                </p>
+              </p>
+              <p style={{textAlign:"center"}}>                
+                SNM LLC 
+              </p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
