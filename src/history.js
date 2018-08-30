@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import App from './App.css'
 import {
@@ -70,3 +71,5 @@ I bet you’re still using Bootstrap too…
 )
 
 export default History;
+=======
+>>>>>>> origin
