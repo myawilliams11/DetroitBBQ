@@ -40,6 +40,15 @@ form {
 h3.ui.header {
     text-align: center;
 }
+
+textarea {
+    width: stretch;
+}
+
+button.ui.large.button {
+    position: relative;
+    left: 300px;
+}
 /* 
 .pageMap{
     position:relative !important;
