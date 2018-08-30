@@ -17,10 +17,14 @@ HomepageHeading {
 
 .facebookIcon{
     display: flex; 
-    flex-direction: row-reverse;
     height: 30px;
     width: 30px;   
-    
+}
+
+.yelpIcon{
+    display: flex;  
+    height: 30px; 
+    width: 30px; 
 }
 /* 
 .pageMap{
