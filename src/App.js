@@ -143,24 +143,24 @@ class DesktopContainer extends Component {
                 </Menu.Item>
 
                     <Menu.Item position ="right"
-                      id = "facebookIcon"
-                      name = "Facebook"
-                      href= "#Facebook"
-                      active={this.state.activeItem === "Facebook"}
-                      onClick={this.handleItemClick}
+                      // id = "facebookIcon"
+                      // name = "Facebook"
+                      // href= "#Facebook"
+                      // active={this.state.activeItem === "Facebook"}
+                      // onClick={this.handleItemClick}
                     >
                     <div>
                       <a href="https://www.facebook.com/bigkensbarbeque/" target="_blank">
                         <img src = {Facebook} className = "facebookIcon"></img>
                       </a>
                     </div>
-                    </Menu.Item>
-                    <Menu.Item position ="right"
-                      name = "Yelp"
-                      href= "#Yelp"
-                      active={this.state.activeItem === "Yelp"}
-                      onClick={this.handleItemClick}
-                      >
+                    {/* </Menu.Item>
+                    <Menu.Item position ="right" */}
+                      {/* // name = "Yelp"
+                      // href= "#Yelp"
+                      // active={this.state.activeItem === "Yelp"}
+                      // onClick={this.handleItemClick}
+                      > */}
                     <div>
                       <a href="https://www.yelp.com/" target="_blank">
                         <img src = {Yelp} className = "yelpIcon"></img>

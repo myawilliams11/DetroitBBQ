@@ -31,6 +31,15 @@ HomepageHeading {
     height: 30px; 
     width: 30px; 
 }
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h3.ui.header {
+    text-align: center;
+}
 /* 
 .pageMap{
     position:relative !important;
