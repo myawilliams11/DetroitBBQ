@@ -113,7 +113,7 @@ class DesktopContainer extends Component {
               secondary={!fixed}
               size="large"
             >
-              <Container style={{contentAlign:"center", marginBottom:"10px", textAlign:"center", padding: "0em 0em", fontSize: "1.2em"}}>
+              <Container style={{contentAlign:"center", marginBottom:"10px", textAlign:"center", fontSize: "1.2em"}}>
                 <Menu.Item
                   name="App"
                   href = "#App"
@@ -326,7 +326,7 @@ render() {
 
       <a name = "Form" />
     <Segment style={{ padding: "8em 0em" }} vertical>
-      <Container text>
+      <Container text >
         <Header as="h3" style={{ fontSize: "2em" }}>
           Pre-Order
         </Header>
