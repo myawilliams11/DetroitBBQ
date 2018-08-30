@@ -22,14 +22,14 @@ HomepageHeading {
 
 .facebookIcon{ 
     display: flex; 
-    height: 30px;
-    width: 30px;   
+    height: 25px;
+    width: 25px;   
 }
 
 .yelpIcon{
     display: flex;  
-    height: 30px; 
-    width: 30px; 
+    height: 25px; 
+    width: 25px; 
 }
 /* 
 .pageMap{
