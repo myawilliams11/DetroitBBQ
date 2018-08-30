@@ -151,7 +151,9 @@ class DesktopContainer extends Component {
                       onClick={this.handleItemClick}
                     >
                     <div>
-                      <img src = {Facebook} className = "facebookIcon"></img>
+                      <a href="https://www.facebook.com/bigkensbarbeque/" target="_blank">
+                        <img src = {Facebook} className = "facebookIcon"></img>
+                      </a>
                     </div>
                     </Menu.Item>
                     <Menu.Item position ="right"
@@ -161,7 +163,9 @@ class DesktopContainer extends Component {
                       onClick={this.handleItemClick}
                       >
                     <div>
-                      <img src = {Yelp} className = "yelpIcon"></img>
+                      <a href="https://www.yelp.com/" target="_blank">
+                        <img src = {Yelp} className = "yelpIcon"></img>
+                      </a>
                     </div>
                     </Menu.Item>
 
@@ -262,7 +266,8 @@ I bet you’re still using Bootstrap too…
         <Header as="h3" style={{ fontSize: "2em" }}>
           Order
         </Header>
-        <Order />
+          <Form />  
+        
         <Modal open = {this.state.modalOpen} onClose={this.handleClose} trigger={<Button onClick = {this.handleOpen} size="large"> TheButton</Button>} basic size = "small">
         <Modal.Content>
       <p style={{fontSize:"3em", textAlign:"center"}}>

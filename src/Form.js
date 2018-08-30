@@ -1,22 +1,28 @@
 import React from 'react';
+import Order from './order'
 
-export default class Form extends React.Component {
-    
+ export default class Form extends React.Component {
     state = {
         firstName: '',
         lastName: '',
         email: '',
-        phone: ''
+        phone: '',
+        fields: {}
     }
-
-    change = e => {
-        this.props.onChange({ [e.target.name]: e.target.value })
+     change = e => {
+        this.onChange({ [e.target.name]: e.target.value })
         this.setState({
             [e.target.name]: e.target.value
         });
     };
-
-    onSubmit = (e) => {
+    
+      onChange = updatedValue => {
+        this.setState({ fields: {
+          ...this.state.fields,
+          ...updatedValue 
+        }});
+      };
+     onSubmit = (e) => {
         e.preventDefault()
         // this.props.onSubmit(this.state);
         this.setState({
@@ -25,7 +31,7 @@ export default class Form extends React.Component {
             email: '',
             phone: ''
         });
-        this.props.onChange({
+        this.onChange({
             firstName: '',
             lastName: '',
             email: '',
@@ -33,12 +39,8 @@ export default class Form extends React.Component {
         });
         
     }
-
-    render() {
+     render() {
         return (
-          
-        <div>
-            <h2>Contact Us!</h2>
             <form>
                 <input 
                 name='firstName'
@@ -68,10 +70,10 @@ export default class Form extends React.Component {
                 onChange={e => this.change(e)} 
                 />
                 <br />
-                <button onClick={e => this.onSubmit(e)}>Submit</button>
+                <Order onClick={e => this.onSubmit(e)}/>
+    
+                {/* <button onClick={e => this.onSubmit(e)}>Submit</button> */}
             </form>
-            </div>
         );
     }
-}
-
+} 
