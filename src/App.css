@@ -15,10 +15,16 @@ HomepageHeading {
     background-color:black !important;
 }
 
-.headerStyle{
-    color: purple !important;
-    opacity: 1 !important;
+.facebookIcon{
+    display: flex; 
+    height: 30px;
+    width: 30px;   
+}
 
+.yelpIcon{
+    display: flex;  
+    height: 30px; 
+    width: 30px; 
 }
 /* 
 .pageMap{
