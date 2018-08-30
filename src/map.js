@@ -1,14 +1,13 @@
-<<<<<<< HEAD
 import React from "react";
 import { GoogleApiWrapper, Map, Marker, InfoWindow } from "google-maps-react";
 
 const DetroitCoords = {
-  lat: 42.4496675,
-  lng: -82.96470290000002
+  lat: 42.3314,
+  lng: -83.0
 };
 const NearbyDetroitCoords = {
-  lat: 42.4617058,
-  lng: -83.31074939999996
+  lat: 42.4,
+  lng: -83.0458
 };
 
 class MapContainer extends React.Component {
@@ -71,5 +70,3 @@ class MapContainer extends React.Component {
 export default GoogleApiWrapper({
   apiKey: "AIzaSyBO4We7vjQJVCfBtlMbqYbDNkQfLX8rIAk"
 })(MapContainer);
-=======
->>>>>>> origin
