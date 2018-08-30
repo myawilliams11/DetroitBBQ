@@ -291,7 +291,7 @@ I bet you’re still using Bootstrap too…
             <Grid.Column width={15}>
               <Header as="h4" inverted style={{textAlign:"center"}}>
                 
-                (313)505-0505  |  test@gmail.com  |  Facebook 
+                (313)505-0505  |  test@gmail.com 
               </Header>
               <p style={{textAlign:"center"}}>
                 Copyright © 2018 All Rights Reserved.
