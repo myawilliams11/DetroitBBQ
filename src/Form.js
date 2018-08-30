@@ -4,48 +4,35 @@ import NumberDrop from "./NumberDrop";
 import { TextArea } from "semantic-ui-react";
 
 export default class Form extends React.Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    textarea: ""
-  };
-  change = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
   render() {
     return (
       <form>
         <input
           name="firstName"
           placeholder="First Name"
-          value={this.state.firstName}
-          onChange={this.change}
+          value={this.props.firstName}
+          onChange={this.props.change}
         />
         <br />
         <input
           name="lastName"
           placeholder="Last Name"
-          value={this.state.lastName}
-          onChange={this.change}
+          value={this.props.lastName}
+          onChange={this.props.change}
         />
         <br />
         <input
           name="email"
           placeholder="E-mail"
-          value={this.state.email}
-          onChange={this.change}
+          value={this.props.email}
+          onChange={this.props.change}
         />
         <br />
         <input
           name="phone"
           placeholder="Phone"
-          value={this.state.phone}
-          onChange={this.change}
+          value={this.props.phone}
+          onChange={this.props.change}
         />
         <br />
         <div>
@@ -77,9 +64,9 @@ export default class Form extends React.Component {
         <TextArea
           name="textarea"
           placeholder="Add details..."
-          onChange={this.change}
-          value={this.state.textarea}>
-            {this.state.textarea}
+          onChange={this.props.change}
+          value={this.props.textarea}>
+            {this.props.textarea}
         </TextArea>
       </form>
     );
