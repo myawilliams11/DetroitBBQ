@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import Order from "./order";
 import History from "./history";
 import Form from "./Form";
 import Map from "./map";
@@ -144,24 +143,24 @@ class DesktopContainer extends Component {
                 </Menu.Item>
 
                     <Menu.Item position ="right"
-                      id = "facebookIcon"
-                      name = "Facebook"
-                      href= "#Facebook"
-                      active={this.state.activeItem === "Facebook"}
-                      onClick={this.handleItemClick}
+                      // id = "facebookIcon"
+                      // name = "Facebook"
+                      // href= "#Facebook"
+                      // active={this.state.activeItem === "Facebook"}
+                      // onClick={this.handleItemClick}
                     >
                     <div>
                       <a href="https://www.facebook.com/bigkensbarbeque/" target="_blank">
                         <img src = {Facebook} className = "facebookIcon"></img>
                       </a>
                     </div>
-                    </Menu.Item>
-                    <Menu.Item position ="right"
-                      name = "Yelp"
-                      href= "#Yelp"
-                      active={this.state.activeItem === "Yelp"}
-                      onClick={this.handleItemClick}
-                      >
+                    {/* </Menu.Item>
+                    <Menu.Item position ="right" */}
+                      {/* // name = "Yelp"
+                      // href= "#Yelp"
+                      // active={this.state.activeItem === "Yelp"}
+                      // onClick={this.handleItemClick}
+                      > */}
                     <div>
                       <a href="https://www.yelp.com/" target="_blank">
                         <img src = {Yelp} className = "yelpIcon"></img>
@@ -200,9 +199,28 @@ ResponsiveContainer.propTypes = {
 class HomepageLayout extends Component{
 
   // adding modal to order form
-  state = {modalOpen: false}
+  state = {
+    modalOpen: false,
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    textarea: ""
+  }
+  change = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
   handleOpen = () => this.setState({modalOpen:true})
-  handleClose = () => this.setState({modalOpen:false})
+  handleClose = () => this.setState({
+    modalOpen:false,
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    textarea: ""
+  })
 
 render() {
   return(
@@ -266,7 +284,14 @@ I bet you’re still using Bootstrap too…
         <Header as="h3" style={{ fontSize: "2em" }}>
           Order
         </Header>
-          <Form />  
+          <Form
+            firstName={this.state.firstName}
+            lastName={this.state.lastName}
+            email={this.state.email}
+            phone={this.state.phone}
+            textarea={this.state.textarea}
+            change={this.change}
+            />
         
         <Modal open = {this.state.modalOpen} onClose={this.handleClose} trigger={<Button onClick = {this.handleOpen} size="large"> TheButton</Button>} basic size = "small">
         <Modal.Content>
