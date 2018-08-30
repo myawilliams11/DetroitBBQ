@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import FoodDrop from './FoodDrop';
 import NumberDrop from './NumberDrop';
@@ -66,3 +67,5 @@ class Order extends React.Component {
 }
 
 export default Order;
+=======
+>>>>>>> origin
