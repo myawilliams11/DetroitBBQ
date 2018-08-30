@@ -293,7 +293,7 @@ I bet you’re still using Bootstrap too…
             change={this.change}
             />
         
-        <Modal open = {this.state.modalOpen} onClose={this.handleClose} trigger={<Button onClick = {this.handleOpen} size="large"> TheButton</Button>} basic size = "small">
+        <Modal open = {this.state.modalOpen} onClose={this.handleClose} trigger={<Button onClick = {this.handleOpen} size="large"> Submit</Button>} basic size = "small">
         <Modal.Content>
       <p style={{fontSize:"3em", textAlign:"center"}}>
         Your order has been sent! 
@@ -303,7 +303,7 @@ I bet you’re still using Bootstrap too…
       </p>
     </Modal.Content>
     <Modal.Actions style={{fontSize:"1em", display: "flex", justifyContent:"center"}}>
-        <Button className="orderButton" onClick={this.handleClose} inverted >Button don't work</Button>
+        <Button className="orderButton" onClick={this.handleClose} inverted >return</Button>
         </Modal.Actions>
     </Modal>
 
