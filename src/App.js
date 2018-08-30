@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
-import Order from "./order";
 import History from "./history";
 import Form from "./Form";
 import Map from "./map";
 import PropTypes from "prop-types";
-import Ken from "./ken.jpg";
+import Ken from "./ken.png";
 import Ribs from "./ribs.png";
-import Fb from "./facebook-logo.png";
+import Facebook from "./facebook-logo.png"
+import Yelp from "./yelp-icon.png"
 import {
   Button,
   Container,
@@ -45,7 +45,6 @@ const HomepageHeading = ({ mobile }) => (
               }}
           />
           </div>
-
           <Header
             as="h2"
             content="Food Stand and Catering Service"
@@ -57,13 +56,13 @@ const HomepageHeading = ({ mobile }) => (
               paddingBottom:"0.5em"
             }}
           />
-    </div>
+          </div>
     <br/>
     <Button                   
       href= "#Form"
       primary size="huge"
       style={{backgroundColor:"black", fontColor: "light grey", opacity:"0.8"}}>
-      Pre-Order now! 
+      Order now!
       <Icon name="right arrow" />
     </Button>
   </Container>
@@ -103,18 +102,18 @@ class DesktopContainer extends Component {
             className='headBanner'
             inverted
             textAlign="center"
-            style={{ minHeight: 700, padding: "1em 0em"}}
+            style={{ minHeight: 700, padding: "1em 0em" }}
             vertical
           >
             <Menu className='menuBar'
-              style={{ opacity:"0.75" }}
+              style={{ opacity:"0.75", contentAlign:"center"}}
               fixed={fixed ? "top" : null}
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
               size="large"
             >
-              <Container>
+              <Container style={{contentAlign:"center", marginBottom:"10px", textAlign:"center", fontSize: "1.2em"}}>
                 <Menu.Item
                   name="App"
                   href = "#App"
@@ -148,6 +147,33 @@ class DesktopContainer extends Component {
                   Order
                 </Menu.Item>
 
+                    <Menu.Item position ="right"
+                      // id = "facebookIcon"
+                      // name = "Facebook"
+                      // href= "#Facebook"
+                      // active={this.state.activeItem === "Facebook"}
+                      // onClick={this.handleItemClick}
+                    >
+                    <div>
+                      <a href="https://www.facebook.com/bigkensbarbeque/" target="_blank">
+                        <img src = {Facebook} className = "facebookIcon"></img>
+                      </a>
+                    </div>
+                    {/* </Menu.Item>
+                    <Menu.Item position ="right" */}
+                      {/* // name = "Yelp"
+                      // href= "#Yelp"
+                      // active={this.state.activeItem === "Yelp"}
+                      // onClick={this.handleItemClick}
+                      > */}
+                    <div>
+                      <a href="https://www.yelp.com/" target="_blank">
+                        <img src = {Yelp} className = "yelpIcon"></img>
+                      </a>
+                    </div>
+                    </Menu.Item>
+
+                
               </Container>
             </Menu>
             <HomepageHeading />
@@ -178,9 +204,28 @@ ResponsiveContainer.propTypes = {
 class HomepageLayout extends Component{
 
   // adding modal to order form
-  state = {modalOpen: false}
+  state = {
+    modalOpen: false,
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    textarea: ""
+  }
+  change = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
   handleOpen = () => this.setState({modalOpen:true})
-  handleClose = () => this.setState({modalOpen:false})
+  handleClose = () => this.setState({
+    modalOpen:false,
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    textarea: ""
+  })
 
 render() {
   return(
@@ -202,8 +247,7 @@ render() {
             <p/>f
             Donec pharetra malesuada tortor, non vestibulum orci tristique sed. Etiam auctor tincidunt libero, et sodales nisl dapibus sit amet. Nam eu lacus in metus tempus sollicitudin. Etiam in nisi a eros ultrices rhoncus et ac nulla. Vestibulum et ipsum sit amet enim pharetra bibendum at non turpis. Morbi pulvinar iaculis leo, sed ullamcorper erat posuere non. Integer et faucibus augue. Nam facilisis metus vel sagittis dapibus. Maecenas elit tellus, fermentum sit amet aliquet eget, pretium non odio. Sed enim velit, lobortis at purus in, porta bibendum ipsum. Aenean et magna tellus.
             </p>
-
-
+            
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
             <Image
@@ -224,11 +268,11 @@ render() {
     <Segment style={{ padding: "0em" }} vertical>
       <Grid celled="internally" columns="equal"  verticalAlign="middle" >
         <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
+        <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em", height: "600px", display:"flex", justifyContent: "center", contentAlign:"center"}}>
             <Header as="h3" style={{ fontSize: "1.5em", textAlign:"center"}}> 
               Hours of Operation 
             </Header>
-             <Header style={{position: "relative", fontSize:"1.3em"}}>
+            <Header style={{position: "relative", fontSize:"1.3em"}}>
              15260 Eight Mile Road <br/>
              Detroit Michigan, 48205
              </Header>
@@ -282,13 +326,20 @@ render() {
 
       <a name = "Form" />
     <Segment style={{ padding: "8em 0em" }} vertical>
-      <Container text>
+      <Container text >
         <Header as="h3" style={{ fontSize: "2em" }}>
           Pre-Order
         </Header>
-          <Form />  
+          <Form
+            firstName={this.state.firstName}
+            lastName={this.state.lastName}
+            email={this.state.email}
+            phone={this.state.phone}
+            textarea={this.state.textarea}
+            change={this.change}
+            />
         
-        <Modal open = {this.state.modalOpen} onClose={this.handleClose} trigger={<Button onClick = {this.handleOpen} size="large"> TheButton</Button>} basic size = "small">
+        <Modal open = {this.state.modalOpen} onClose={this.handleClose} trigger={<Button onClick = {this.handleOpen} size="large"> Submit</Button>} basic size = "small">
         <Modal.Content>
       <p style={{fontSize:"3em", textAlign:"center"}}>
         Your order has been sent! 
@@ -298,7 +349,7 @@ render() {
       </p>
     </Modal.Content>
     <Modal.Actions style={{fontSize:"1em", display: "flex", justifyContent:"center"}}>
-        <Button className="orderButton" onClick={this.handleClose} inverted >Button don't work</Button>
+        <Button className="orderButton" onClick={this.handleClose} inverted >return</Button>
         </Modal.Actions>
     </Modal>
 
@@ -312,12 +363,14 @@ render() {
             <Grid.Column width={15}>
               <Header as="h4" inverted style={{textAlign:"center"}}>
                 
-                (313)505-0505  |  test@gmail.com  | < a ref = "https://www.facebook.com/bigkensbarbeque/?fb_dtsg_ag=AdzZHcpW9mwKaFxfs2o6gr7JR-daGi0FAVp53VEYR4LRBg%3AAdzosTvdloaqhdgfiVYLEhcB0bms2_p7ufadv5Qz_siC4Q" target="_blank"> <img src={Fb} style={{height:"20px", width:"20px", opacity:"80"}}/></a>
+                (313)505-0505  |  test@gmail.com 
               </Header>
               <p style={{textAlign:"center"}}>
-                SNM LLC <br/>
+              SNM LLC <br/>
+
                 Copyright © 2018 All Rights Reserved.
-              </p>  
+              </p>
+
               <p style={{textAlign:"center"}}>
                 WillPower Solutions LLC 
                 </p>
