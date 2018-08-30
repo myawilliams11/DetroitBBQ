@@ -106,14 +106,14 @@ class DesktopContainer extends Component {
             vertical
           >
             <Menu className='menuBar'
-              style={{ opacity:"0.75" }}
+              style={{ opacity:"0.75", contentAlign:"center"}}
               fixed={fixed ? "top" : null}
               inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
               size="large"
             >
-              <Container>
+              <Container style={{contentAlign:"center", marginBottom:"10px", textAlign:"center", padding: "0em 0em", fontSize: "1.2em"}}>
                 <Menu.Item
                   name="App"
                   href = "#App"
