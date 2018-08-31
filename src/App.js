@@ -108,7 +108,7 @@ class DesktopContainer extends Component {
             <Menu className='menuBar'
               style={{ opacity:"0.75", contentAlign:"center"}}
               fixed={fixed ? "top" : null}
-              inverted={!fixed}
+              inverted={true}
               pointing={!fixed}
               secondary={!fixed}
               size="large"
