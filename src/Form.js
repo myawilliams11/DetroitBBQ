@@ -1,12 +1,12 @@
 import React from "react";
 import FoodDrop from "./FoodDrop";
 import NumberDrop from "./NumberDrop";
-import { TextArea } from "semantic-ui-react";
+import { TextArea, Radio } from "semantic-ui-react";
 
 export default class Form extends React.Component {
   render() {
     return (
-      <form>
+      <form> 
         <input
           name="firstName"
           placeholder="First Name"
@@ -35,12 +35,13 @@ export default class Form extends React.Component {
           onChange={this.props.change}
         />
         <br />
+
         <div>
           <FoodDrop />
         </div>
         <br />
         <div>
-          <FoodDrop />
+          <NumberDrop />
         </div>
         <br />
         <div>
@@ -52,7 +53,7 @@ export default class Form extends React.Component {
         </div>
         <br />
         <div>
-          <NumberDrop />
+          <FoodDrop />
         </div>
         <br />
         <div>
@@ -63,7 +64,7 @@ export default class Form extends React.Component {
         <br />
         <TextArea
           name="textarea"
-          placeholder="Add details..."
+          placeholder="Any questions or special requests about your order?"
           onChange={this.props.change}
           value={this.props.textarea}>
             {this.props.textarea}
